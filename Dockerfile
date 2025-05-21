@@ -6,14 +6,11 @@ RUN mvn clean package -DskipTests
 
 
 FROM openjdk:11-jdk-slim
-ARG JAR_FILE=target/app.jar
-COPY ${JAR_FILE} app.jar
+ARG JAR_FILE=target/JayantaHalder.SpringWebMvcJDBC.jar
+COPY ${JAR_FILE} JayantaHalder.SpringWebMvcJDBC.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+ENTRYPOINT ["java", "-jar", "/JayantaHalder.SpringWebMvcJDBC.jar"]
 
 
 
-#FROM openjdk:17.0.1-jdk-slim
-#COPY --from=build /target/jobapp-0.0.1-SNAPSHOT.jar jobapp.jar
-#EXPOSE 8080
-#ENTRYPOINT ["java","-jar","jobapp.jar"]
+
